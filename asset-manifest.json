@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/24-7-forecast/static/css/main.f855e6bc.css",
+    "main.js": "/24-7-forecast/static/js/main.15d5d745.js",
+    "static/media/hero-photo.webp": "/24-7-forecast/static/media/hero-photo.bdc2464e0ed2298e3c8c.webp",
+    "index.html": "/24-7-forecast/index.html",
+    "static/media/avatar.webp": "/24-7-forecast/static/media/avatar.78401a870727e0b3f51f.webp",
+    "main.f855e6bc.css.map": "/24-7-forecast/static/css/main.f855e6bc.css.map",
+    "main.15d5d745.js.map": "/24-7-forecast/static/js/main.15d5d745.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.15d5d745.js"
+  ]
+}
