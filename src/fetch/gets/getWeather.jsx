@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const API_KEY = process.env.REACT_APP_OPENWEATHER_KEY;
+
 export const getWeather = async (lat, lon) => {
   const response = await axios.get(
     "https://api.openweathermap.org/data/2.5/weather",
@@ -7,7 +9,7 @@ export const getWeather = async (lat, lon) => {
       params: {
         lat: lat,
         lon: lon,
-        appid: "366259874904f9faa4c4a5c3c3a6deab",
+        appid: API_KEY,
       },
     }
   );
