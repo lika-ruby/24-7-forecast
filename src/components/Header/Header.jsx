@@ -1,6 +1,7 @@
 import { Container } from "../Container/Container.jsx";
 import avatar from "../../images/avatar.webp";
 import Logo from "../../images/logo.svg";
+import BurgerSVG from "../../images/burger.svg";
 import {
   HeaderS,
   HeaderCont,
@@ -55,7 +56,7 @@ export const Header = () => {
             <Avatar src={avatar} alt="Your avatar" />
             <ButtonB>
               <Burger>
-                <use href="/icon.svg#burger"></use>
+                <use href={BurgerSVG}></use>
               </Burger>
             </ButtonB>
           </Right>
