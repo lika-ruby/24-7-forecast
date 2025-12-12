@@ -76,7 +76,7 @@ export const Search = styled.button`
 
 export const List = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;

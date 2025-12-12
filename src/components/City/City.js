@@ -71,7 +71,7 @@ margin-bottom: 8px;
   }
 `;
 
-export const Date = styled.p`
+export const DateS = styled.p`
 font-family: "Besley", sans-serif;
 font-weight: 500;
 font-size: 12px;
@@ -124,7 +124,7 @@ gap :12px;
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled.svg`
 width: 108px;
 height: 108px;
   @media (min-width: 808px) {
@@ -178,36 +178,6 @@ export const Down = styled.div`
 display:flex;
  justify-content: space-between;
 align-items: center;
-`;
-
-export const Icon = styled.svg`
-  width: 32px;
-  height: 32px;
-  fill: var(--first-text-color);
-
-  @media (min-width: 808px) {
-    width: 36px;
-  height: 36px;
-  }
-  @media (min-width: 1240px) {
-  width: 42px;
-  height: 42px;
-  }
-`;
-
-export const IconH = styled.svg`
-  width: 32px;
-  height: 32px;
-  fill: var(--second-text-color);
-
-  @media (min-width: 808px) {
-    width: 36px;
-  height: 36px;
-  }
-  @media (min-width: 1240px) {
-  width: 42px;
-  height: 42px;
-  }
 `;
 
 export const More = styled.button`

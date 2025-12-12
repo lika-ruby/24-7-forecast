@@ -1,5 +1,6 @@
 import { Container } from "../Container/Container.jsx";
 import avatar from "../../images/avatar.webp";
+import Logo from "../../images/logo.svg";
 import {
   HeaderS,
   HeaderCont,
@@ -26,7 +27,7 @@ export const Header = () => {
         <HeaderCont>
           <LogoA>
             <LogoS>
-              <use href="/icon.svg#logo"></use>
+              <use href={Logo}></use>
             </LogoS>
           </LogoA>
           <Nav>
