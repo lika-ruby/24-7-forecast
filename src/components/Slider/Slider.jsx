@@ -11,7 +11,6 @@ import "swiper/css/effect-creative";
 
 export const Slider = () => {
   const [images, setImages] = useState([]);
-  console.log("API_KEY:", process.env.REACT_APP_OPENWEATHER_KEY);
   useEffect(() => {
     getImages().then((data) => setImages(data || []));
   }, []);
