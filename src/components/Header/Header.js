@@ -146,7 +146,7 @@ export const ButtonB = styled.button`
   padding: 0;
 `;
 
-export const Burger = styled.svg`
+export const BurgerS = styled.svg`
   fill: var(--first-text-color);
   width: 44px;
   height: 44px;

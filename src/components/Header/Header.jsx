@@ -1,7 +1,7 @@
 import { Container } from "../Container/Container.jsx";
 import avatar from "../../images/avatar.webp";
 import Logo from "../../images/logo.svg";
-import BurgerSVG from "../../images/burger.svg";
+import Burger from "../../images/burger.svg";
 import {
   HeaderS,
   HeaderCont,
@@ -18,7 +18,7 @@ import {
   Btn2,
   Avatar,
   ButtonB,
-  Burger,
+  BurgerS,
 } from "./Header.js";
 
 export const Header = () => {
@@ -55,9 +55,9 @@ export const Header = () => {
             </Buttons>
             <Avatar src={avatar} alt="Your avatar" />
             <ButtonB>
-              <Burger>
-                <use href={BurgerSVG}></use>
-              </Burger>
+              <BurgerS>
+                <use href={Burger}></use>
+              </BurgerS>
             </ButtonB>
           </Right>
         </HeaderCont>
