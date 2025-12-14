@@ -8,7 +8,6 @@ import {
   Line,
   Time,
   Center,
-  Img,
   Temp,
   Buttons,
   Button,
@@ -36,8 +35,12 @@ import { PiQuestionMarkBold } from "react-icons/pi";
 import { TbHeartMinus } from "react-icons/tb";
 import { TbHeartPlus } from "react-icons/tb";
 import { FaArrowsRotate } from "react-icons/fa6";
+import { useContext } from "react";
+import { WeathersContext } from "../../contexts/WeatherContext.jsx";
 
 export const City = ({ id, city, country, temp, iconType, timezone }) => {
+  const { getWeatherByIdObj, getHourlyWeather, getWeeklyWeather } =
+    useContext(WeathersContext);
   const now = new Date().getTime();
   const nowTimezone = new Date(now + timezone * 1000);
 
@@ -102,13 +105,13 @@ export const City = ({ id, city, country, temp, iconType, timezone }) => {
         <Temp>{temp}℃</Temp>
       </Center>
       <Buttons>
-        <Button>Hourly forecast</Button>
-        <Button>Weekly forecast</Button>
+        <Button onClick={() => getHourlyWeather(id)}>Hourly forecast</Button>
+        <Button onClick={() => getWeeklyWeather(id)}>Weekly forecast</Button>
       </Buttons>
       <Down>
         <TbHeartPlus size={36} stroke="#341355" />
         <TbHeartMinus size={36} stroke="#341355" />
-        <More>See more</More>
+        <More onClick={() => getWeatherByIdObj(id)}>See more</More>
         <FaArrowsRotate size={36} fill="#077066" />
       </Down>
     </Item>

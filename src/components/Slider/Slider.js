@@ -10,7 +10,7 @@ export const SliderS = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   font-family: "Fraunces", sans-serif;
   font-weight: 400;
   font-size: 32px;
