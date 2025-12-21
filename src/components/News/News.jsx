@@ -8,6 +8,7 @@ import { nanoid } from "nanoid";
 export const News = () => {
   const [news, setNews] = useState([]);
   const [page, setPage] = useState(1);
+
   useEffect(() => {
     getNews(page).then((data) => {
       const newsWithId = data.map((item) => ({ ...item, id: nanoid() }));
@@ -21,22 +22,19 @@ export const News = () => {
     });
   }, [page]);
 
-  const addPage = () => {
-    setPage((prev) => prev + 1);
-  };
+  const addPage = () => setPage((prev) => prev + 1);
 
   return (
     <NewsS>
       <Container>
         <Title>Attention! Breaking News</Title>
         <List>
-          {console.log(news)}
           {news.map((n) => (
             <New
               key={n.id}
               id={n.id}
               name={n.title}
-              img={n.urlToImage}
+              img={n.image}
               url={n.url}
             />
           ))}
