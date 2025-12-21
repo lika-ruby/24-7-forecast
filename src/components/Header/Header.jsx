@@ -20,8 +20,13 @@ import {
   ButtonB,
   BurgerS,
 } from "./Header.js";
+import { UsersContext } from "../../contexts/UsersContext.jsx";
+import { useContext } from "react";
 
 export const Header = () => {
+  const { openModalS, openModalL, isLogin, logOutUser, name } =
+    useContext(UsersContext);
+
   return (
     <HeaderS>
       <Container>
@@ -44,21 +49,41 @@ export const Header = () => {
               </Item>
             </List>
           </Nav>
+
           <Right>
-            <Buttons>
-              <Button>
-                <Btn1>Sign Up</Btn1>
-              </Button>
-              <Button>
-                <Btn2>Log In</Btn2>
-              </Button>
-            </Buttons>
-            <Avatar src={avatar} alt="Your avatar" />
-            <ButtonB>
-              <BurgerS>
-                <use href={Burger}></use>
-              </BurgerS>
-            </ButtonB>
+            {isLogin === false ? (
+              <Right>
+                <Buttons>
+                  <Button>
+                    <Btn1 onClick={openModalS}>Sign Up</Btn1>
+                  </Button>
+                  <Button>
+                    <Btn2 onClick={openModalL}>Log In</Btn2>
+                  </Button>
+                </Buttons>
+                <Avatar src={avatar} alt="Your avatar" />
+                <ButtonB>
+                  <BurgerS>
+                    <use href={Burger}></use>
+                  </BurgerS>
+                </ButtonB>
+              </Right>
+            ) : (
+              <Right>
+                <Buttons>
+                  <Button>
+                    <Btn1 onClick={logOutUser}>Log out</Btn1>
+                  </Button>
+                </Buttons>
+                <Link>Hi, {name}</Link>
+                <Avatar src={avatar} alt="Your avatar" />
+                <ButtonB>
+                  <BurgerS>
+                    <use href={Burger}></use>
+                  </BurgerS>
+                </ButtonB>
+              </Right>
+            )}
           </Right>
         </HeaderCont>
       </Container>

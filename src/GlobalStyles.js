@@ -44,7 +44,8 @@ body{
     font-family: 'Inter', sans-serif;
 	min-height: 100vh;
 }
-	.no-scroll {
+
+.no-scroll {
   overflow: hidden;
   height: 100vh;
 }

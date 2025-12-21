@@ -37,10 +37,12 @@ import { TbHeartPlus } from "react-icons/tb";
 import { FaArrowsRotate } from "react-icons/fa6";
 import { useContext } from "react";
 import { WeathersContext } from "../../contexts/WeatherContext.jsx";
+import { UsersContext } from "../../contexts/UsersContext.jsx";
 
 export const City = ({ id, city, country, temp, iconType, timezone }) => {
   const { getWeatherByIdObj, getHourlyWeather, getWeeklyWeather } =
     useContext(WeathersContext);
+  const { isLogin } = useContext(UsersContext);
   const now = new Date().getTime();
   const nowTimezone = new Date(now + timezone * 1000);
 
@@ -108,12 +110,19 @@ export const City = ({ id, city, country, temp, iconType, timezone }) => {
         <Button onClick={() => getHourlyWeather(id)}>Hourly forecast</Button>
         <Button onClick={() => getWeeklyWeather(id)}>Weekly forecast</Button>
       </Buttons>
-      <Down>
-        <TbHeartPlus size={36} stroke="#341355" />
-        <TbHeartMinus size={36} stroke="#341355" />
-        <More onClick={() => getWeatherByIdObj(id)}>See more</More>
-        <FaArrowsRotate size={36} fill="#077066" />
-      </Down>
+      {isLogin === false ? (
+        <Down>
+          <More onClick={() => getWeatherByIdObj(id)}>See more</More>
+          <FaArrowsRotate size={36} fill="#077066" />
+        </Down>
+      ) : (
+        <Down>
+          <TbHeartPlus size={36} stroke="#341355" />
+          <TbHeartMinus size={36} stroke="#341355" />
+          <More onClick={() => getWeatherByIdObj(id)}>See more</More>
+          <FaArrowsRotate size={36} fill="#077066" />
+        </Down>
+      )}
     </Item>
   );
 };

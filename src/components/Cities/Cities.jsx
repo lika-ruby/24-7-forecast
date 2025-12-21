@@ -46,7 +46,7 @@ export const Cities = () => {
           <Search>Search</Search>
         </Form>
         {filter === "" ? (
-          <p>A</p>
+          <p>Enter city name</p>
         ) : (
           <List>
             {console.log(weatherList)}
